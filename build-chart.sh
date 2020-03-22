@@ -1,7 +1,7 @@
 mkdir build
 mkdir prevdata
 
-git clone git@github.com:hashicorp/consul-helm.git consul
+git clone https://github.com/hashicorp/consul-helm consul
 aws s3 cp s3://helm-repo.sphera.tools/consul prevdata --recursive || true
 cd consul && helm package ./ && cd ..
 mv consul/*.tgz build/
