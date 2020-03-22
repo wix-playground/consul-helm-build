@@ -1,0 +1,32 @@
+  
+language: go
+
+env:
+  - AWS_DEFAULT_REGION=us-east-1
+os:
+  - linux
+
+before_install:
+  - pyenv global 3.7.1
+  - pip install -U pip
+  - pip install awscli
+  - mkdir /tmp/helm
+  - wget https://get.helm.sh/helm-v3.1.2-linux-amd64.tar.gz -O /tmp/helm/helm.tar.gz
+  - tar xzvf /tmp/helm/helm.tar.gz -C /tmp/helm
+  - mv /tmp/helm/linux-amd64/helm /tmp/helm/helm
+  - chmod u+x /tmp/helm/helm
+  - export PATH=/tmp/helm/:$PATH
+
+script:
+  - chmod +x build-chart.sh
+  - ./build-chart.sh
+  
+deploy:
+  provider: s3
+  access_key_id: "${AWS_ACCESS_KEY_ID}"
+  secret_access_key: "${AWS_SECRET_ACCESS_KEY}"
+  bucket: "helm-repo.sphera.tools"
+  skip_cleanup: true
+  region: "${AWS_DEFAULT_REGION}"
+  local_dir: build
+  upload-dir: consulv3

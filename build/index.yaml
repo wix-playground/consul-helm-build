@@ -1,0 +1,31 @@
+apiVersion: v1
+entries:
+  consul:
+  - apiVersion: v1
+    created: "2020-03-22T15:01:47.445429+02:00"
+    description: Install and configure Consul on Kubernetes.
+    digest: e8a9750c4405bee58ca9a6adfab6f83a9025e22615cb848f2a752ebef4d9c3e4
+    home: https://www.consul.io
+    name: consul
+    sources:
+    - https://github.com/hashicorp/consul
+    - https://github.com/hashicorp/consul-helm
+    - https://github.com/hashicorp/consul-k8s
+    urls:
+    - http://helm-repo.sphera.tools.s3-website-us-east-1.amazonaws.com/consulv3/consul-0.18.0.tgz
+    version: 0.18.0
+  - apiVersion: v1
+    created: "2020-03-22T15:01:47.447125+02:00"
+    description: Install and configure Consul on Kubernetes.
+    digest: 49d417b4b8ea13af111d3f20bf201707795496e2a122a3f0390505c97ccdd0e9
+    home: https://github.com/wix-playground/consul-helm
+    name: consul
+    sources:
+    - https://github.com/hashicorp/consul
+    - https://github.com/hashicorp/consul-helm
+    - https://github.com/hashicorp/consul-k8s
+    - https://www.consul.io
+    urls:
+    - http://helm-repo.sphera.tools.s3-website-us-east-1.amazonaws.com/consulv3/consul-0.8.3.tgz
+    version: 0.8.3
+generated: "2020-03-22T15:01:47.440399+02:00"
