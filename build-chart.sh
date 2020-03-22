@@ -13,4 +13,3 @@ else
     echo 'No previous charts to merge'
     helm repo index build/ --url http://helm-repo.sphera.tools.s3-website-us-east-1.amazonaws.com/consulv3
 fi
-
